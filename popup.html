@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body { font: 13px system-ui, sans-serif; width: 240px; padding: 12px; }
+      h1 { font-size: 13px; margin: 0 0 8px; }
+      label { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+      .hint { color: #666; font-size: 11px; margin-top: 10px; }
+      ul { padding-left: 16px; margin: 6px 0 0; }
+    </style>
+  </head>
+  <body>
+    <h1>Multi-Site Ad Skipper</h1>
+    <label>
+      <input type="checkbox" id="toggle" />
+      <span>Player ad-skipping enabled</span>
+    </label>
+    <div class="hint">
+      <strong>Player skipping</strong> (toggle above):
+      <ul>
+        <li>Prime Video — fast-forwards + mutes ads</li>
+        <li>YouTube — clicks "Skip Ad", or fast-forwards non-skippable</li>
+      </ul>
+      <strong>Network blocking</strong> (always on): blocks ~29 common ad networks (DoubleClick, Taboola, Outbrain, etc.) across all sites.
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Tool metadata
+.qodo/
+_metadata/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Node (in case you add tooling later)
+node_modules/
+package-lock.json
+
+# Build output
+dist/
+build/
+
+# Local env
+.env
+.env.local

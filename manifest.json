@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Multi-Site Ad Skipper",
+  "version": "0.2.0",
+  "description": "Skips ads on Prime Video and YouTube, and blocks common ad-network requests across the web.",
+  "permissions": ["storage", "activeTab", "declarativeNetRequest"],
+  "host_permissions": [
+    "*://*.primevideo.com/*",
+    "*://*.amazon.com/*",
+    "*://*.amazon.co.uk/*",
+    "*://*.amazon.de/*",
+    "*://*.amazon.co.jp/*",
+    "*://*.amazon.in/*",
+    "*://*.youtube.com/*",
+    "*://*.youtube-nocookie.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.primevideo.com/*",
+        "*://*.amazon.com/*/video/*",
+        "*://*.amazon.com/gp/video/*",
+        "*://*.amazon.co.uk/*/video/*",
+        "*://*.amazon.de/*/video/*",
+        "*://*.amazon.co.jp/*/video/*",
+        "*://*.amazon.in/*/video/*",
+        "*://*.youtube.com/*",
+        "*://*.youtube-nocookie.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ad_networks",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "action": {
+    "default_title": "Multi-Site Ad Skipper",
+    "default_popup": "popup.html"
+  }
+}
